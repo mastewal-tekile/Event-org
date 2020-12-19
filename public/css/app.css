@@ -31425,6 +31425,41 @@ select {
           animation: bounce 1s infinite;
 }
 
+.flex{
+  display: flex;
+}
+
+.flex-col{
+  display: flex;
+  flex-flow: column;
+}
+
+.between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex.evenly{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex.between{
+  display: flex;
+  justify-content: space-around;
+}
+
+.middle{
+  width: 50%;
+  margin: auto
+}
+
+@media (max-width: 780px) {
+  .middle{
+    width: 95%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -1,3 +1,35 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.flex{
+    display: flex;
+}
+
+.flex-col{
+    display: flex;
+    flex-flow: column;
+}
+
+.between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex.evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+.flex.between{
+    display: flex;
+    justify-content: space-around;
+}
+
+.middle{
+    width: 50%;
+    margin: auto
+}
+@media (max-width: 780px) {
+    .middle{
+        width: 95%;
+    }
+}
