@@ -44,4 +44,18 @@ class User extends Authenticatable
     public function organizers() {
         return $this->belongsToMany(Organizer::class, 'event_organizers');
     }
+
+    public function reservation($event){
+        $tickets = Ticket::where('event_id', $event->id)
+            ->where('user_id', $this->id);
+        if (count($tickets->get()) == 0) return null;
+        $reservation = Ticket::where('event_id', $event->id)
+                ->orderBy('created_at')
+                ->take($event->number_of_seats)
+                ->where('user_id', $this->id);
+        return (bool)$reservation;
+    }
+    public function events() {
+        return $this->belongsToMany(Event::class, 'tickets');
+    }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Organizer;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -48,7 +50,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('event')->with('event', Event::findOrFail($id));
     }
 
     /**
@@ -83,5 +85,13 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function reserve($id){
+        $ticket = Ticket::create([
+            'user_id' => Auth::id(),
+            'event_id' => $id
+        ]);
+        return redirect('/events/'.$id);
     }
 }

@@ -7,14 +7,16 @@ use Illuminate\View\Component;
 class EventTumb extends Component
 {
     private $event;
+    private $horizontal;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($event)
+    public function __construct($event, $horizontal = false)
     {
         $this->event = $event;
+        $this->horizontal = $horizontal;
     }
 
     /**

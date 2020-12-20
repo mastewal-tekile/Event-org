@@ -7,14 +7,16 @@ use Illuminate\View\Component;
 class EventList extends Component
 {
     private $events;
+    private $horizontal;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($events)
+    public function __construct($events, $horizontal = false)
     {
         $this->events = $events;
+        $this->horizontal = $horizontal;
     }
 
     /**
@@ -25,6 +27,7 @@ class EventList extends Component
     public function render()
     {
         return view('components.lists.event-list')
-            ->with('events', $this->events);
+            ->with('events', $this->events)
+            ->with('horizontal', $this->horizontal);
     }
 }

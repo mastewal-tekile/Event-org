@@ -49,7 +49,11 @@
                 @endforeach
             </select>
         </div>
+        <div>
+            <x-label for="name" :value="__('Number of seats')" />
 
+            <x-input id="number_of_seats" class="block mt-1 w-full" type="number" name="number_of_seats"/>
+        </div>
         <div class="mt-4">
             <x-label for="description" :value="__('Description')" />
 

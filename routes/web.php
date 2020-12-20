@@ -23,11 +23,13 @@ Route::get('/', function () {
 
 Route::resource('organizers', \App\Http\Controllers\OrganizerController::class)->middleware(['auth']);
 Route::resource('events', \App\Http\Controllers\EventController::class)->middleware(['auth']);
+Route::post('/events/reserve/{id}',
+    [\App\Http\Controllers\EventController::class, 'reserve'])->middleware(['auth']);
 Route::get(
     'organizers/events/create/{id}',
     [\App\Http\Controllers\OrganizerController::class, 'create_event'])->name('organizers.event.create');
 Route::get('/tickets', function () {
-    return view('tickets');
+    return view('ticket');
 })->middleware(['auth'])->name('tickets');
 
 require __DIR__.'/auth.php';
