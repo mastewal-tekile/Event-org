@@ -55,5 +55,8 @@
                 </x-button>
             </div>
         </form>
+        {{ __('Already have account?') }} <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                        {{ __(' Login') }}
+                    </a>
     </x-auth-card>
 </x-guest-layout>
