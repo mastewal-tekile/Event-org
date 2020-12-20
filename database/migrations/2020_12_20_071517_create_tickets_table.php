@@ -17,7 +17,7 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('event_id')->constrained();
-            $table->foreignId('payment_order_id')->constrained();
+            $table->foreignId('payment_order_id')->constrained()->nullable();
             $table->timestamps();
         });
     }

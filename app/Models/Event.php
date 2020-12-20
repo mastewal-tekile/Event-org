@@ -18,5 +18,6 @@ class Event extends Model
         'has_ticket',
         'organizer_id',
         'event_type_id',
-        'city_id'];
+        'city_id',
+        'number_of_seats'];
 }

@@ -2,22 +2,20 @@
     <x-slot name="header">
         <div class="flex" style="justify-content: space-between;">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Event organizers') }}
+                {{ __('Tickets') }}
             </h2>
-            <a href="/organizers/events/create/{{$id}}">
-                <x-button class="ml-3">
-                    {{ __('Add Event') }}
-                </x-button>
+            <a href="/organizers/create">
+
             </a>
 
         </div>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 middle">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <x-lists.event-list :events="$events" :horizontal="false"/>
+                <div class="p-6 bg-white border-b border-gray-200 ">
+                    <x-lists.event-list :events="Auth::user()->events()->get()" :horizontal="true"/>
                 </div>
             </div>
         </div>

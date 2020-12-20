@@ -25,6 +25,7 @@ class CreateEventsTable extends Migration
             $table->foreignId('organizer_id')->constrained();
             $table->foreignId('event_type_id')->constrained();
             $table->foreignId('city_id')->constrained();
+            $table->integer('number_of_seats');
             $table->timestamps();
         });
     }
