@@ -13,7 +13,7 @@
             <select id="event_type"
                     class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
                     name="event_type_id">
-                @foreach(App\Models\EventType::get() as $eventType)
+                @foreach(\App\Models\EventType::get() as $eventType)
                     <option value="{{$eventType->id}}">{{$eventType->name}}</option>
                 @endforeach
             </select>
@@ -44,7 +44,7 @@
             <select id="city"
                     class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
                     name="city_id">
-                @foreach(App\Models\City::get() as $city)
+                @foreach(\App\Models\City::get() as $city)
                     <option value="{{$city->id}}">{{$city->name}}</option>
                 @endforeach
             </select>

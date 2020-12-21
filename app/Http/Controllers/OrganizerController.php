@@ -43,7 +43,7 @@ class OrganizerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         $organizers = Auth::user()->organizers()->get();
         $organizer = Organizer::create( $request->except(['_token']));
         $organizer->addUser(Auth::id());

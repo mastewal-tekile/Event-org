@@ -8,21 +8,15 @@ use Illuminate\View\Component;
 class EventForm extends Component
 {
     private $organizer;
-    private $cities;
-    private $eventTypes;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($organizer, $cities, $eventTypes)
+    public function __construct($organizer)
     {
         $this->organizer = $organizer;
-        $this->cities = City::get();
-        $this->eventTypes = EventType::get();
-        $this->defaultAttributes([
-            'cities' => "xyz"
-        ]);
     }
 
     /**
@@ -32,9 +26,7 @@ class EventForm extends Component
      */
     public function render()
     {
-        return view('components.forms.event-form'. [
-                'cities' => $this->cities,
-                'eventTypes' => $this->eventTypes,
+        return view('components.forms.event-form', [
                 'organizer' => $this->organizer
             ]);
     }
