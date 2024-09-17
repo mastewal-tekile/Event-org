@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class EventController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource here.
      *
      * @return \Illuminate\Http\Response
      */
